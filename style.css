@@ -145,9 +145,34 @@ body {
 }
 
 .sidebar {
+    color: #ffffff;
     background-color: var(--sidebar-bg);
     grid-row: 1 / 3;
     grid-column: 1;
+
+    display: grid;
+    grid-template-rows: 60px 1fr 1fr 2.5fr;
+}
+
+.sidebar-header,
+.sidebar-link {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-items: center;
+}
+
+.sidebar-header img {
+    width: 40px;
+    margin:auto;
+}
+
+.link-list li {
+    margin-bottom: 20px;
+}
+
+.sidebar-link img {
+    width: 20px;
+    margin: auto;
 }
 
 .main-area {
@@ -185,4 +210,14 @@ body {
     border: 0;
     border-radius: 16px;
     grid-column: 2;
+}
+
+.link-list {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-link {
+    color: inherit;
+    text-decoration: none;
 }
