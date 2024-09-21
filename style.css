@@ -9,6 +9,8 @@
     --header-bg: #fef3c7;
 
     --sidebar-color: #fafafa;
+    --main-color: #0a0a0a;
+    --card-text-color: #6b7280;
 
     --btn-hover: #0f766e;
     --btn-active: #134e4a;
@@ -18,6 +20,33 @@
 
     --search-bar-bg: #93c5fd;
     --search-bar-bg-focus: #eff6ff;
+
+    --shadow-color: #bef264;
+
+    --card-bg: #fafafa;
+
+    /*
+    --main-bg: #1e293b;
+    --sidebar-bg: #020617;
+    --header-bg: #082f49;
+
+    --sidebar-color: #fafafa;
+    --main-color: #fafafa;
+    --card-text-color: #f3f4f6;
+
+    --btn-hover: #64748b;
+    --btn-active: #1e293b;
+
+    --sidebar-link-hover: #64748b;
+    --sidebar-link-active: #1e293b;
+
+    --search-bar-bg: #93c5fd;
+    --search-bar-bg-focus: #eff6ff;
+
+    --shadow-color: #020617;
+
+    --card-bg: #0f172a;
+    */
 }
 
 
@@ -34,6 +63,7 @@ body {
 }
 
 .header {
+    color: var(--main-color);
     background-color: var(--header-bg);
     padding: 8px 48px 8px 40px;
     grid-row: 1;
@@ -205,6 +235,7 @@ body {
 }
 
 .main-area {
+    color: var(--main-color);
     background-color: var(--main-bg);
     padding: 8px 48px 48px 28px;
     grid-row: 2;
@@ -237,7 +268,7 @@ body {
 }
 
 .card {
-    background-color: #ffffff;
+    background-color: var(--card-bg);
     padding: 20px;
 
     display: grid;
@@ -261,7 +292,7 @@ body {
 }
 
 .card-text p {
-    color: #606060;
+    color: var(--card-text-color);
     margin: 0;
 }
 
@@ -292,7 +323,7 @@ body {
 }
 
 .announcements-container {
-    background-color: #ffffff;
+    background-color: var(--card-bg);
     padding: 20px;
 
     display: grid;
@@ -331,7 +362,7 @@ body {
 }
 
 .trending-container {
-    background-color: #ffffff;
+    background-color: var(--card-bg);
     padding: 20px;
 
     display: grid;
@@ -400,7 +431,7 @@ body {
 
 .header {
     margin-bottom: 3px;
-    box-shadow: 0 3px 3px #bef264;
+    box-shadow: 0px 3px var(--shadow-color);
 
 }
 
@@ -412,7 +443,7 @@ body {
 .announcements-container,
 .trending-container {
     border-radius: 6px;
-    box-shadow: 3px 3px 3px #bef264;
+    box-shadow: 3px 3px 3px var(--shadow-color);
 }
 
 .header-buttons button:hover {
@@ -429,4 +460,15 @@ body {
 
 .sidebar-link:active {
     background-color: var(--sidebar-link-active);
+}
+
+.light-dark-mode {
+    width: 24px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+.light-dark-mode:hover {
+    cursor: pointer;
 }

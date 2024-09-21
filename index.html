@@ -263,7 +263,105 @@
             </div>
         </div>
 
-   </div> 
+   </div>
+
+   <img src="./images/weather-sunny.svg" alt="" class="light-dark-mode">
+
+   <script>
+
+        let lightMode = true;
+
+        const varNames = [
+            "--main-bg",
+            "--sidebar-bg",
+            "--header-bg",
+            "--sidebar-color",
+            "--main-color",
+            "--card-text-color",
+            "--btn-hover",
+            "--btn-active",
+            "--sidebar-link-hover",
+            "--sidebar-link-active",
+            "--search-bar-bg",
+            "--search-bar-bg-focus",
+            "--shadow-color",
+            "--card-bg"
+        ];
+
+        const lmColors = [
+            "#d9f99d",
+            "#0d9488",
+            "#fef3c7",
+            "#fafafa",
+            "#0a0a0a",
+            "#6b7280",
+            "#0f766e",
+            "#134e4a",
+            "#0f766e",
+            "#134e4a",
+            "#93c5fd",
+            "#eff6ff",
+            "#bef264",
+            "#fafafa",
+        ];
+
+        const dmColors = [
+            "#1e293b",
+            "#020617",
+            "#082f49",
+            "#fafafa",
+            "#fafafa",
+            "#f3f4f6",
+            "#64748b",
+            "#1e293b",
+            "#64748b",
+            "#1e293b",
+            "#93c5fd",
+            "#eff6ff",
+            "#020617",
+            "#0f172a"
+        ];
+
+        const body = document.querySelector("body");
+
+        const magnify = document.querySelector(".magnify-glass-btn img");
+        const bell = document.querySelector(".notifications-bell");
+        
+        const stars = document.querySelectorAll(".card-options img:nth-child(1)");
+        const eyes = document.querySelectorAll(".card-options img:nth-child(2)");
+        const forks = document.querySelectorAll(".card-options img:nth-child(3)");
+
+        const ldModeImg = document.querySelector(".light-dark-mode");
+        ldModeImg.addEventListener("click", (evt) => {
+
+            target = evt.target;
+            if(lightMode) {
+                target.setAttribute("src", "./images/weather-night.svg");
+                for(let i = 0; i < varNames.length; i++) {
+                    body.style.setProperty(varNames[i], dmColors[i]);
+                }
+            }
+            else {
+                target.setAttribute("src", "./images/weather-sunny.svg");
+                for(let i = 0; i < varNames.length; i++) {
+                    body.style.setProperty(varNames[i], lmColors[i]);
+                }
+            }
+
+            lightMode = !lightMode;
+            let suffix = lightMode ? ".svg" : "-white.svg";
+
+            magnify.setAttribute("src", "./images/magnify" + suffix);
+            bell.setAttribute("src", "./images/bell-ring" + suffix);
+
+            stars.forEach((e) => e.setAttribute("src", "./images/star-plus" + suffix));
+            eyes.forEach((e) => e.setAttribute("src", "./images/eye-plus" + suffix));
+            forks.forEach((e) => e.setAttribute("src", "./images/source-fork" + suffix));
+
+        });
+
+   </script>
+
 </body>
 
 </html>
